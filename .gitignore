@@ -18,6 +18,8 @@ wandb/
 experiments/
 andy_*.json
 jill_*.json
+mindcraft.log
+mindcraft.log.prev
 src/models/logs/*
 server_data/*
 results/*
