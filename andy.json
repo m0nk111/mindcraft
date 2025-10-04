@@ -1,6 +1,10 @@
 {
     "name": "andy",
 
-    "model": "gpt-5-nano"
+    "model": "gpt-5-nano",
+
+    "modes": {
+        "cowardice": true
+    }
 
 }

@@ -73,9 +73,13 @@ export class Agent {
         this.bot.once('spawn', async () => {
             try {
                 clearTimeout(spawnTimeout);
-                addBrowserViewer(this.bot, count_id);
-                console.log('Initializing vision intepreter...');
-                this.vision_interpreter = new VisionInterpreter(this, settings.allow_vision);
+                if (settings.allow_vision) {
+                    addBrowserViewer(this.bot, count_id);
+                    console.log('Initializing vision intepreter...');
+                    this.vision_interpreter = new VisionInterpreter(this, settings.allow_vision);
+                } else {
+                    console.log('Vision disabled; skipping viewer and interpreter initialization.');
+                }
 
                 // wait for a bit so stats are not undefined
                 await new Promise((resolve) => setTimeout(resolve, 1000));
